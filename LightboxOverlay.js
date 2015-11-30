@@ -40,6 +40,7 @@ var LightboxOverlay = React.createClass({
     onOpen:         PropTypes.func,
     onClose:        PropTypes.func,
     swipeToDismiss: PropTypes.bool,
+    backgroundOpacity: PropTypes.number,
   },
 
   getInitialState: function() {
@@ -49,7 +50,7 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: 0.9,
+        opacity: this.props.backgroundOpacity,
       },
       pan: new Animated.Value(0),
       openVal: new Animated.Value(0),
@@ -86,7 +87,7 @@ var LightboxOverlay = React.createClass({
             target: {
               y: gestureState.dy,
               x: gestureState.dx,
-              opacity: 0.9 - Math.abs(gestureState.dy / WINDOW_HEIGHT)
+              opacity: this.props.backgroundOpacity - Math.abs(gestureState.dy / WINDOW_HEIGHT)
             }
           });
           this.close();
@@ -116,7 +117,7 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: 0.9,
+        opacity: this.props.backgroundOpacity,
       }
     });
 
