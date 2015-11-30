@@ -49,7 +49,7 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: 0.5,
+        opacity: 0.9,
       },
       pan: new Animated.Value(0),
       openVal: new Animated.Value(0),
@@ -86,7 +86,7 @@ var LightboxOverlay = React.createClass({
             target: {
               y: gestureState.dy,
               x: gestureState.dx,
-              opacity: 0.5 - Math.abs(gestureState.dy / WINDOW_HEIGHT)
+              opacity: 0.9 - Math.abs(gestureState.dy / WINDOW_HEIGHT)
             }
           });
           this.close();
@@ -116,7 +116,7 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: 0.5,
+        opacity: 0.9,
       }
     });
 
