@@ -49,7 +49,7 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: 1,
+        opacity: 0.5,
       },
       pan: new Animated.Value(0),
       openVal: new Animated.Value(0),
