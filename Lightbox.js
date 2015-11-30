@@ -24,7 +24,6 @@ var Lightbox = React.createClass({
     renderHeader:    PropTypes.func,
     renderContent:   PropTypes.func,
     underlayColor:   PropTypes.string,
-    underlayOpacity: PropTypes.number,
     onOpen:          PropTypes.func,
     onClose:         PropTypes.func,
     springConfig:    PropTypes.shape({
@@ -37,7 +36,6 @@ var Lightbox = React.createClass({
   getDefaultProps: function() {
     return {
       swipeToDismiss: true,
-      underlayOpacity: 1,
       onOpen: () => {},
       onClose: () => {},
     };
@@ -77,7 +75,6 @@ var Lightbox = React.createClass({
       springConfig: this.props.springConfig,
       children: this.getContent(),
       onClose: this.onClose,
-      backgroundOpacity: this.state.underlayOpacity,
     };
   },
 
