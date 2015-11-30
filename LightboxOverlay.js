@@ -50,7 +50,6 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: this.props.backgroundOpacity,
       },
       pan: new Animated.Value(0),
       openVal: new Animated.Value(0),
@@ -117,7 +116,6 @@ var LightboxOverlay = React.createClass({
       target: {
         x: 0,
         y: 0,
-        opacity: this.props.backgroundOpacity,
       }
     });
 
@@ -168,7 +166,7 @@ var LightboxOverlay = React.createClass({
 
 
     var lightboxOpacityStyle = {
-      opacity: openVal.interpolate({inputRange: [0, 1], outputRange: [0, target.opacity]})
+      opacity: openVal.interpolate({inputRange: [0, 1], outputRange: [0, this.props.opacity]})
     };
 
     var handlers;
